@@ -1,13 +1,13 @@
 #!/bin/bash
 
 IMAGE_NAME="covid-19-classifier-img"
+CONTAINER_NAME="covid-19-classifier-container"
 
-if docker inspect "$IMAGE_NAME" &> /dev/null; then
-    echo "The image $IMAGE_NAME exists."
-    docker run -it covid-19-classifier-img
-    python src/train.py && python src/test.py
-else
-    echo "The image $IMAGE_NAME does not exist."
-    docker build -t covid-19-classifier-img .
-    docker run -d --name covid-19-classifier-container covid-19-classifier-img
-fi
+docker build -t $IMAGE_NAME .
+docker run -dit --name $CONTAINER_NAME $IMAGE_NAME
+
+while [ "$(docker inspect -f '{{.State.Running}}' "$CONTAINER_NAME")" != "true" ]; do
+    sleep 1
+done
+
+docker exec -it $CONTAINER_NAME bash

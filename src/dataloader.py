@@ -6,7 +6,7 @@ from sklearn.utils.class_weight import compute_class_weight
 warnings.filterwarnings("ignore")
 
 def preprocess():
-    df = pd.read_csv('data/COVID-19_MS_dataset_train.csv')
+    df = pd.read_csv('https://jasonchu-dev-q3567j.s3.us-west-1.amazonaws.com/COVID_19_Classifier/COVID-19_MS_dataset_train.csv')
     
     df.drop(columns=['Person_ID', 'Sample_ID'], inplace=True)
     PCRresult2bin = {'pos': 1, 'neg': 0}

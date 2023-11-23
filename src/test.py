@@ -5,7 +5,7 @@ from utils import models_dir_len
 def main():
     model = tf.keras.models.load_model(f'models/model_{models_dir_len(offset=0)}.h5')
 
-    test_df = pd.read_csv('data/COVID-19_MS_dataset_test.csv')
+    test_df = pd.read_csv('https://jasonchu-dev-q3567j.s3.us-west-1.amazonaws.com/COVID_19_Classifier/COVID-19_MS_dataset_test.csv')
     attributes = test_df[['Person_ID', 'Sample_ID']]
     test_df.drop(columns=['Person_ID', 'Sample_ID', 'PCR_result'], inplace=True)
     predictions = model.predict(test_df)
