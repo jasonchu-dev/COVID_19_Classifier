@@ -4,7 +4,8 @@ IMAGE_NAME="covid-19-classifier-img"
 
 if docker inspect "$IMAGE_NAME" &> /dev/null; then
     echo "The image $IMAGE_NAME exists."
-    docker start covid-19-classifier-container
+    docker run -it covid-19-classifier-img
+    python src/train.py && python src/test.py
 else
     echo "The image $IMAGE_NAME does not exist."
     docker build -t covid-19-classifier-img .
