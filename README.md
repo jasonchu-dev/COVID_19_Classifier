@@ -14,7 +14,7 @@ Dataset: https://www.kaggle.com/datasets/kirillpe/proteomics-retention-time-pred
 
 Clone
 ```
-    git clone https://github.com/jasonchu-dev/Air_Quality_Forecasting.git
+    git clone https://github.com/jasonchu-dev/COVID_19_Classifier.git
 ```
 Download Docker and run
 ```
