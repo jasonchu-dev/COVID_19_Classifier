@@ -12,9 +12,8 @@ RUN git clone https://github.com/jasonchu-dev/COVID_19_Classifier.git
 
 RUN cd COVID_19_Classifier && \
     pip3 install --upgrade pip && \
-    pip3 install -r requirements.txt
-
-RUN jupyter labextension install @jupyterlab/terminal && \
+    pip3 install jupyterlab && \
+    jupyter labextension install @jupyterlab/terminal && \
     jupyter labextension install @oriolmirosa/jupyterlab_materialdarker
 
 EXPOSE 8888
