@@ -13,3 +13,7 @@ RUN git clone https://github.com/jasonchu-dev/COVID_19_Classifier.git
 RUN cd COVID_19_Classifier && \
     pip3 install --upgrade pip && \
     pip3 install -r requirements.txt
+
+EXPOSE 8888
+
+CMD ["jupyter", "notebook", "--ip='0.0.0.0'", "--port=8888", "--allow-root"]
