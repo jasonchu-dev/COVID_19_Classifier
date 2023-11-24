@@ -1,11 +1,11 @@
 import os
 import yaml
 
-def models_dir_exist():
-    os.makedirs('models', exist_ok=True)
+def dir_exist(dir):
+    os.makedirs(dir, exist_ok=True)
 
-def models_dir_len(offset=1):
-    items = os.listdir('models')
+def dir_len(dir='models', offset=1):
+    items = os.listdir(dir)
     return len(items) + offset
 
 def parameters():

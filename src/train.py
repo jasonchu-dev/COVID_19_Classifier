@@ -1,7 +1,7 @@
 import tensorflow as tf
 from model import FCNN
 from dataloader import preprocess
-from utils import models_dir_len, models_dir_exist, parameters
+from utils import dir_len, dir_exist, parameters
 
 def main():
     X, y, class_weights = preprocess()
@@ -24,8 +24,8 @@ def main():
 
     model.fit(X, y, batch_size=batch_size, class_weight={0: class_weights[0], 1: class_weights[1]}, epochs=epochs, callbacks=[early_stopping], validation_split=validation_split)
 
-    models_dir_exist()
-    model.save(f'models/model_{models_dir_len()}.h5')
+    dir_exist('models')
+    model.save(f'models/model_{dir_len()}.h5')
 
 if __name__ == "__main__":
     main()
