@@ -14,6 +14,8 @@ RUN cd COVID_19_Classifier && \
     pip3 install --upgrade pip && \
     pip3 install -r requirements.txt
 
+RUN jupyter labextension install @jupyterlab/terminal
+
 EXPOSE 8888
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.allow_origin='*'"]
