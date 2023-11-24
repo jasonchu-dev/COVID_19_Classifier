@@ -1,13 +1,13 @@
 #!/bin/bash
 
-models="../models"
-__pycache__="../src/__pycache__"
-reports="../reports"
+models="models/"
+__pycache__="src/__pycache__/"
+reports="reports/"
 
 delete_folders() {
     local folder="$1"
     if [ -d "$folder" ]; then
-        rm -r "$folder"
+        rm -rf "$folder"
         echo "$folder deleted"
     else
         echo "$folder not found"
