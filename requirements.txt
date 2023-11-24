@@ -3,6 +3,5 @@ PyYAML
 matplotlib
 seaborn
 numpy
-tensorflow
 scikit-learn
 jupyter

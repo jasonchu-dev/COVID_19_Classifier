@@ -4,6 +4,8 @@ from dataloader import preprocess
 from utils import dir_len, dir_exist, parameters
 
 def main():
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    
     X, y, class_weights = preprocess()
     batch_size, epochs, validation_split, patience, lr, _ = parameters()
     model = FCNN()

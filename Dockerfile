@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FROM ubuntu:20.04
+FROM tensorflow/tensorflow:latest-gpu
 
 RUN apt-get update && \
     apt-get install -y python3 python3-pip git vim && \
@@ -12,9 +12,7 @@ RUN git clone https://github.com/jasonchu-dev/COVID_19_Classifier.git
 
 RUN cd COVID_19_Classifier && \
     pip3 install --upgrade pip && \
-    pip3 install jupyterlab && \
-    jupyter labextension install @jupyterlab/terminal && \
-    jupyter labextension install @oriolmirosa/jupyterlab_materialdarker
+    pip3 install -r requirements.txt
 
 EXPOSE 8888
 
