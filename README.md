@@ -18,5 +18,5 @@ Clone
 ```
 Download Docker and run
 ```
-    bash run.sh
+    bash scripts/run.sh
 ```
