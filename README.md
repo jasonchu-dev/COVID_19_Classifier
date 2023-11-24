@@ -20,3 +20,11 @@ Download Docker and run
 ```
     bash scripts/run.sh
 ```
+To clean files
+```
+    bash scripts/clean_files.sh
+```
+To delete docker container and image
+```
+    bash scripts/clean_docker.sh
+```
