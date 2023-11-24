@@ -3,7 +3,7 @@
 IMAGE_NAME="covid-19-classifier-img"
 CONTAINER_NAME="covid-19-classifier-container"
 
-docker build -t $IMAGE_NAME .
+docker build -t $IMAGE_NAME --no-cache .
 docker run -dit --name $CONTAINER_NAME $IMAGE_NAME
 
 while [ "$(docker inspect -f '{{.State.Running}}' "$CONTAINER_NAME")" != "true" ]; do
