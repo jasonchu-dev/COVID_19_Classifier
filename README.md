@@ -2,7 +2,7 @@
 
 Prediction of PCR results from saliva sample/mass spectrometry data using deep learning.
 
-Dataset: https://www.kaggle.com/datasets/kirillpe/proteomics-retention-time-prediction
+Dataset: https://www.kaggle.com/datasets/kerneler/saliva-testing-dataset/data
 
 ### Fully Connected Neural Network
 
