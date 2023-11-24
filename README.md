@@ -28,3 +28,4 @@ To delete docker container and image
 ```
     bash scripts/clean_docker.sh
 ```
+Adjust hyperparameters in configs if need be.
